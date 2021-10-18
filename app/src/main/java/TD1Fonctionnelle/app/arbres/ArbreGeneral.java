@@ -1,6 +1,6 @@
 package TD1Fonctionnelle.app.arbres;
 import java.util.Set;
-public interface ArbreGeneral<T extends Sommable<T>> {
+public interface ArbreGeneral<T extends Sommable<T> & Comparable<T>> {
     int taille();
     boolean contient(int val);
 
@@ -9,4 +9,7 @@ public interface ArbreGeneral<T extends Sommable<T>> {
     Set<T> valeurs();
 
     T somme();
+    T min();
+    T max();
+    boolean estTrie();
 }

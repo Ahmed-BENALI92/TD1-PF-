@@ -2,7 +2,7 @@ package TD1Fonctionnelle.app;
 
 import TD1Fonctionnelle.app.arbres.Sommable;
 
-public class Chaine implements Sommable<Chaine> {
+public class Chaine implements Sommable<Chaine>, Comparable<Chaine> {
     public String val;
 
     Chaine(final String  val )

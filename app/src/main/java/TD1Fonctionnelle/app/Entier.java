@@ -2,7 +2,7 @@ package TD1Fonctionnelle.app;
 
 import TD1Fonctionnelle.app.arbres.Sommable;
 
-public class Entier implements Sommable<Entier> {
+public class Entier implements Sommable<Entier>, Comparable<Entier> {
     private int val;
     Entier(final int  val)
     {

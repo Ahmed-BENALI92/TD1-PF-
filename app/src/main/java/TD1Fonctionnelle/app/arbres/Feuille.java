@@ -2,7 +2,7 @@ package TD1Fonctionnelle.app.arbres;
 
 import java.util.Set;
 
-public class Feuille<T extends Sommable<T>> implements ArbreGeneral<T> {
+public class Feuille<T extends Sommable<T> & Comparable<T>> implements ArbreGeneral<T> {
 
     private final T valeur;
 
@@ -35,12 +35,12 @@ public class Feuille<T extends Sommable<T>> implements ArbreGeneral<T> {
     public T somme() {
         return valeur;
     }
-
+    @Override
     public T min() {
         return valeur;
     }
 
-
+    @Override
     public T max() {
         return valeur;
     }
