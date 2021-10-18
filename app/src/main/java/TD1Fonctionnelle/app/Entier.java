@@ -23,4 +23,9 @@ public class Entier implements Sommable<Entier>, Comparable<Entier> {
     public Entier sommer(Entier other) {
         return new Entier(this.val + other.GetVal());
     }
+
+    @Override
+    public int compareTo(Entier o) {
+        return 1;
+    }
 }

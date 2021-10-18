@@ -68,4 +68,19 @@ public class ArbreGeneralTest {
 
 
     }
+
+    @Test public void TestMinNoeud()
+    {
+        final ArbreGeneral<Entier> f1 = new Feuille<>(new Entier(3));
+        final ArbreGeneral<Entier> f2 = new Feuille<>(new Entier(5));
+        final ArbreGeneral <Entier> n1 = new Noeud(List.of(f1,f2));
+        assertEquals(n1.min(),3);
+    }
+    @Test public void TestMaxNoeud()
+    {
+        final ArbreGeneral<Entier> f1 = new Feuille<>(new Entier(3));
+        final ArbreGeneral<Entier> f2 = new Feuille<>(new Entier(5));
+        final ArbreGeneral <Entier> n1 = new Noeud(List.of(f1,f2));
+        assertEquals(n1.max(),5);
+    }
 }

@@ -23,4 +23,9 @@ public class Chaine implements Sommable<Chaine>, Comparable<Chaine> {
     public Chaine sommer(Chaine other) {
         return new Chaine(this.val.concat(other.val));
     }
+
+    @Override
+    public int compareTo(Chaine o) {
+        return 1;
+    }
 }
