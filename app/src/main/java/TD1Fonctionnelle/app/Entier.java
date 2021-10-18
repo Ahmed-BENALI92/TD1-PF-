@@ -21,6 +21,6 @@ public class Entier implements Sommable<Entier> {
 
     @Override
     public Entier sommer(Entier other) {
-        return null;
+        return new Entier(this.val + other.GetVal());
     }
 }

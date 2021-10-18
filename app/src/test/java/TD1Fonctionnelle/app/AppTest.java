@@ -17,8 +17,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class AppTest {
 
-    public static final Arbre arbre0() {
-        return new Noeud(new ArrayList<Arbre>());
+    /*public static final Arbre arbre0() {
+        return new Noeud(new ArrayList<ArbreGeneral>());
     }
 
     public static final Arbre arbre1() {
@@ -109,5 +109,5 @@ public class AppTest {
         assertFalse(arbre2().estTrie());
         assertFalse(arbre3().estTrie());
     }
-
+*/
 }

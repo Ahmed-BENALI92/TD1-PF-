@@ -1,6 +1,8 @@
 package TD1Fonctionnelle.app;
 
-public class Chaine {
+import TD1Fonctionnelle.app.arbres.Sommable;
+
+public class Chaine implements Sommable<Chaine> {
     public String val;
 
     Chaine(final String  val )
@@ -15,5 +17,10 @@ public class Chaine {
     {
         if(val == c1.GetVal())return true;
         return false;
+    }
+
+    @Override
+    public Chaine sommer(Chaine other) {
+        return new Chaine(this.val.concat(other.val));
     }
 }

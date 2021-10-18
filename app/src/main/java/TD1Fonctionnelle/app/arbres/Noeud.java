@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class Noeud<T> implements ArbreGeneral<T> {
+public class Noeud<T extends Sommable<T>> implements ArbreGeneral<T> {
 
     private final List<ArbreGeneral<T>> fils;
 
@@ -43,6 +43,24 @@ public class Noeud<T> implements ArbreGeneral<T> {
             rtr.addAll(a.valeurs());
         }
         return rtr;
+    }
+
+    public T somme()
+    {
+        int i;
+        if (fils == null || fils.size() == 0)
+            return null; // should it be 0 ? no because nothing to sum
+        // alternative without 0 initialization
+        // int rtr = fils.get(0).somme();
+        // for (int i = 1; i<fils.size(); i++) {
+        //     rtr += fils.get(i).somme();
+        // }
+        T v= fils.get(0).somme();
+        for (i=1; i<fils.size(); i++)
+        {
+            v=v.sommer(fils.get(i).somme());
+        }
+        return v;
     }
 
 

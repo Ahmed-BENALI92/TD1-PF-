@@ -55,4 +55,17 @@ public class ArbreGeneralTest {
         assertEquals(v.taille(),1);
 
     }
+    @Test public void TestSommeNoeud()
+    {
+        final ArbreGeneral<Entier> f1 = new Feuille<>(new Entier(3));
+        final ArbreGeneral<Entier> f2 = new Feuille<>(new Entier(5));
+        final ArbreGeneral <Entier> n1 = new Noeud(List.of(f1,f2));
+        assertEquals(n1.somme(),8);
+        final ArbreGeneral<Chaine> f3 = new Feuille<>(new Chaine("Jai"));
+        final ArbreGeneral<Chaine> f4 = new Feuille<>(new Chaine(" faim"));
+        final ArbreGeneral <Chaine> n2 = new Noeud(List.of(f3,f4));
+        assertEquals(n2.somme(),"Jai faim");
+
+
+    }
 }
