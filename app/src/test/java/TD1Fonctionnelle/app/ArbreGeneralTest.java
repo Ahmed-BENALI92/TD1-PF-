@@ -18,10 +18,10 @@ public class ArbreGeneralTest {
 
 
     public static final ArbreGeneral<Entier> arbre1() {
-        final ArbreGeneral<Entier> f1 = new Feuille<>(Entier(3));
-        final ArbreGeneral<Entier> f2 = new Feuille<>(Entier(5));
+        final ArbreGeneral<Entier> f1 = new Feuille<>(new Entier(3));
+        final ArbreGeneral<Entier> f2 = new Feuille<>(new Entier(5));
         final ArbreGeneral <Entier> n1 = new Noeud(List.of(f1,f2));
-        final ArbreGeneral<Entier> f3 = new Feuille<>(Entier(21));
+        final ArbreGeneral<Entier> f3 = new Feuille<>(new Entier(21));
         final ArbreGeneral <Entier> n2 = new Noeud(List.of(n1,f3));
         return n2;
     }
@@ -35,10 +35,10 @@ public class ArbreGeneralTest {
     }
 
     @Test public void testContient() {
-        assertTrue(arbre1().contient(1));
-        assertTrue(arbre1().contient(2));
-        assertTrue(arbre1().contient(3));
-        assertFalse(arbre1().contient(4));
+        assertTrue(arbre1().contient(new Entier(3)));
+        assertTrue(arbre1().contient(new Entier(4)));
+        assertTrue(arbre1().contient(new Entier(1)));
+        assertFalse(arbre1().contient(new Entier(2)));
     }
 
     @Test public void testValeurs() {

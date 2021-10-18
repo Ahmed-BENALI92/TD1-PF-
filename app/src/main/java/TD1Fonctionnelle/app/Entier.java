@@ -1,6 +1,8 @@
 package TD1Fonctionnelle.app;
 
-public class Entier {
+import TD1Fonctionnelle.app.arbres.Sommable;
+
+public class Entier implements Sommable<Entier> {
     private int val;
     Entier(final int  val)
     {
@@ -15,5 +17,10 @@ public class Entier {
         if(e1==null)return false;
         if(val == e1.GetVal())return true;
         return false;
+    }
+
+    @Override
+    public Entier sommer(Entier other) {
+        return null;
     }
 }

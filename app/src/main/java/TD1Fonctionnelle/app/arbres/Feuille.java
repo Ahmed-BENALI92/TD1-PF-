@@ -2,11 +2,11 @@ package TD1Fonctionnelle.app.arbres;
 
 import java.util.Set;
 
-public class Feuille implements Arbre {
+public class Feuille<T> implements ArbreGeneral<T> {
 
-    private final int valeur;
+    private final T valeur;
 
-    public Feuille(final int valeur) {
+    public Feuille(final T valeur) {
         this.valeur = valeur;
     }
 
@@ -16,34 +16,39 @@ public class Feuille implements Arbre {
     }
 
     @Override
-    public boolean contient(final Integer val) {
+    public boolean contient(int val) {
+        return true;
+    }
+
+
+    @Override
+    public boolean contient(final T val) {
         return val.equals(valeur);
     }
 
     @Override
-    public Set<Integer> valeurs() {
+    public Set<T> valeurs() {
         return Set.of(valeur);
     }
 
-    @Override
-    public Integer somme() {
+
+    public T somme() {
         return valeur;
     }
 
-    @Override
-    public Integer min() {
+    public T min() {
         return valeur;
     }
 
-    @Override
-    public Integer max() {
+
+    public T max() {
         return valeur;
     }
 
     /**
      * une feuille est toujours triée.
      */
-    @Override
+
     public boolean estTrie() {
         return true;
     }
